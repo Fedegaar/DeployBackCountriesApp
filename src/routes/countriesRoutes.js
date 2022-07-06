@@ -16,7 +16,7 @@ router.get('/', async (req, res, next) => {
                 await Country.findOrCreate({
                 where:   {     
                     id : e.cca3,           
-                    name : e.name.common,                    
+                    name : e.name.common ? e.name.common : "",                    
                     img : e.flags[1],
                     continent: e.continents[0],
                     capital: e.capital ? e.capital[0] : "",
