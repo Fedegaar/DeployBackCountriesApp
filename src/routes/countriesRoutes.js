@@ -17,7 +17,7 @@ router.get('/', async (req, res, next) => {
                 where:   {     
                     id : e.cca3,           
                     name : e.name.common ? e.name.common : "",                    
-                    img : e.flags[1] ? e.flags[1] : "",
+                    img : e.flags[0] ? e.flags[0] : "",
                     continent: e.continents[0],
                     capital: e.capital ? e.capital[0] : "",
                     population: e.population,
@@ -80,7 +80,7 @@ router.get('/:code', async (req, res, next) => {
         const countryById = {
             id : country.cca3,           
             name : country.name.common,                    
-            img : country.flags[1] ? country.flags[1] : "",
+            img : country.flags[0] ? country.flags[0] : "",
             continente: country.continents[0],
             capital: country.capital ? country.capital[0] : "",
             population: country.population,
